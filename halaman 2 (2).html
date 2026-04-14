@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Demografi</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #4ecdc4, #44a08d); padding: 20px; margin: 0; }
+        form { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        h2 { text-align: center; color: #44a08d; margin-bottom: 20px; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; color: #333; }
+        input, select, textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+        input:focus, select:focus { border-color: #4ecdc4; outline: none; }
+        .row { display: flex; gap: 10px; }
+        .row select { flex: 1; }
+        .jenis-transaksi { display: flex; gap: 15px; margin: 10px 0; }
+        .jenis-transaksi input[type="radio"] { width: auto; }
+        .jenis-transaksi label { margin: 0; font-weight: normal; }
+        button { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white; padding: 15px 30px; border: none; border-radius: 25px; font-size: 18px; cursor: pointer; width: 100%; margin-top: 20px; transition: transform 0.3s; }
+        button:hover { transform: scale(1.02); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #44a08d; color: white; }
+    </style>
+</head>
+<body>
+    <form id="formDemografi" action="submit.php" method="POST">
+        <h2>📊 Data Demografi & Keuangan</h2>
+
+        <!-- Data Transaksi Keuangan (Tabel untuk multiple entries) -->
+        <h3>💰 Data Transaksi Keuangan</h3>
+        <table id="transaksiTable">
+            <thead>
+                <tr>
+                    <th>Tanggal Transaksi</th>
+                    <th>Uraian Transaksi</th>
+                    <th>Jenis Transaksi</th>
+                    <th>Debet</th>
+                    <th>Kredit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <select name="tgl_transaksi_hari[]" required><option value="">Hari</option><!-- Sama seperti atas --></select>
+                            <select name="tgl_transaksi_bulan[]" required><option value="">Bulan</option><!-- Opsi bulan --></select>
+                            <select name="tgl_transaksi_tahun[]" required><option value="">Tahun</option><!-- Opsi tahun 2020-2026 --></select>
+                        </div>
+                    </td>
+                    <td><input type="text" name="uraian[]" required></td>
+                    <td>
+                        <div class="jenis-transaksi">
+                            <label><input type="radio" name="jenis_transaksi[0]" value="Pemasukan" required> Pemasukan</label>
+                            <label><input type="radio" name="jenis_transaksi[0]" value="Pengeluaran" required> Pengeluaran</label>
+                        </div>
+                    </td>
+                    <td><input type="number" name="debet[]" step="0.01" min="0"></td>
+                    <td><input type="number" name="kredit[]" step="0.01" min="0"></td>
+                </tr>
+            </body>
+        </table>
+        <div style="margin-bottom: 20px;">
+        <a href="form akhir.html" style="text-decoration: none;">
+            <button type="button" style="background-color: #fbec66; color:#2c3e50; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+             Lanjutkan
+             <div style="margin-bottom: 20px;">
+        <a href="halaman 2 (1).html" style="text-decoration: none;">
+            <button type="button" style="background-color: #fbec66; color:#2c3e50; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+                ← Kembali
+            </button>
+        </a>
+    </div>
+            </button>
+        </a>
+    </div>
+    <div id="output"></div>
+    </form>
+<div class="menu-nav">
+    <a href="halaman1.html">⬅️ Tugas 1</a>
+    <a href="index.html" class="home-btn">🏠 Home</a>
+    <script>
+        // Fungsi tambah baris transaksi (copy dropdown dari yang pertama)
+        function tambahTransaksi() {
+            const tbody = document.querySelector('#transaksiTable tbody');
+            const row = tbody.rows[0].cloneNode(true);
+            const index = tbody.rows.length;
+            row.querySelectorAll('input, select')[0].name = `jenis_transaksi[${index}]`;
+            row.querySelectorAll('select')[0].name = `tgl_transaksi_hari[${index}]`;
+            row.querySelectorAll('select')[1].name = `tgl_transaksi_bulan[${index}]`;
+            row.querySelectorAll('select')[2].name = `tgl_transaksi_tahun[${index}]`;
+            row.querySelector('input[name*="uraian"]').name = `uraian[${index}]`;
+            row.querySelector('input[name*="debet"]').name = `debet[${index}]`;
+            row.querySelector('input[name*="kredit"]').name = `kredit[${index}]`;
+            tbody.appendChild(row);
+        }
+    </script>
+</body>
+</html>

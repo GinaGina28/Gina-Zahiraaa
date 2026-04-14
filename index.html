@@ -3,92 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Sistem informasi Manajemen</title>
+    <title>Daftar Tugas - Gina Zahira</title>
     <style>
-        body { font-family: 'Times New Roman', Times, serif, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #4ecdc4, #44a08d, #f38ba8); color: #333; scroll-behavior: smooth; }
-        header { background: rgba(255,255,255,0.95); padding: 100px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        h1 { color: #44a08d; margin: 0; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        nav { background: linear-gradient(45deg, #ff6b6b, #feca57); padding: 15px; position: fixed; width: 100%; top: 0; z-index: 1000; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { display: inline-block; margin: 0 10px; padding: 12px 25px; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s; background: rgba(255,255,255,0.2); }
-        nav a:hover { transform: scale(1.1); background: white; color: #44a08d; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        section { padding: 80px 20px 50px; max-width: 1200px; margin: 0 auto; }
-        #index { background: rgba(255,255,255,0.8); text-align: center; }
-        #index ul { list-style: none; padding: 0; }
-        #index li { margin: 20px 0; font-size: 1.2em; }
-        #biodata { background: linear-gradient(45deg, #a8e6cf, #ffd93d); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .biodata-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        #galeri { background: rgba(255,255,255,0.9); }
-        .galeri-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .galeri-grid img { width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
-        .galeri-grid img:hover { transform: scale(1.05); }
-        #video { background: linear-gradient(45deg, #ff9ff3, #f368e0); text-align: center; border-radius: 20px; }
-        iframe { width: 100%; max-width: 800px; height: 450px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        @media (max-width: 768px) { nav a { margin: 5px; padding: 10px 15px; font-size: 0.9em; } section { padding: 60px 10px 40px; } }
+        :root {
+            --sage-mint: #b2d8b2;
+            --dusty-pink: #f4c2c2;
+            --lavender-sage: #d7e1d6;
+            --sage-core: #8ba88b;
+            --blush-dust: #f5d5d5;
+            --shadow-sage: 0 20px 45px rgba(178,216,178,0.25);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Playfair Display', 'Georgia', serif; 
+            background: linear-gradient(135deg, var(--sage-mint) 0%, var(--dusty-pink) 45%, var(--lavender-sage) 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 25px;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(178,216,178,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(244,194,194,0.25) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(215,225,214,0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: gentleBreathe 8s ease-in-out infinite;
+        }
+        @keyframes gentleBreathe {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+        }
+        .container { 
+            background: 
+                linear-gradient(145deg, rgba(255,255,255,0.85), rgba(247,247,247,0.95)),
+                url('image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23f0f0f0" opacity="0.3"/><circle cx="75" cy="75" r="0.8" fill="%23e8e8e8" opacity="0.2"/><circle cx="50" cy="10" r="0.5" fill="%23f5f5f5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); 
+            backdrop-filter: blur(12px); 
+            padding: 75px 55px; 
+            border-radius: 40px; 
+            box-shadow: var(--shadow-sage); 
+            max-width: 580px; 
+            width: 100%;
+            border: 1px solid rgba(139,168,139,0.3);
+            position: relative;
+            z-index: 2;
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 55px; 
+        }
+        .floral-accent { 
+            font-size: 3.8em; 
+            background: linear-gradient(135deg, var(--sage-core) 0%, var(--dusty-pink) 50%, var(--sage-mint) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin-bottom: 25px; 
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(139,168,139,0.3));
+            animation: petalFloat 4s ease-in-out infinite;
+        }
+        @keyframes petalFloat {
+            0%, 100% { transform: rotate(-2deg) translateY(0px); }
+            50% { transform: rotate(2deg) translateY(-4px); }
+        }
+        h1 { 
+            color: var(--sage-core); 
+            font-size: 2.6em; 
+            font-weight: 400; 
+            letter-spacing: 3px; 
+            margin-bottom: 12px;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+        .subtitle { 
+            color: #6b7a6b; 
+            font-size: 1.25em; 
+            font-style: italic; 
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .prodi { 
+            color: var(--dusty-pink); 
+            font-weight: 600; 
+            font-size: 1.15em;
+            text-shadow: 0 1px 4px rgba(244,194,194,0.4);
+        }
+        
+        .daftar-buttons { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 35px;
+        }
+        .tugas-btn { 
+            position: relative; 
+            padding: 30px 45px; 
+            font-size: 1.45em; 
+            font-weight: 500; 
+            border: 2px solid rgba(255,255,255,0.6); 
+            border-radius: 30px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 12px; 
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            overflow: hidden;
+            font-family: inherit;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .tugas-btn::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 0; 
+            height: 100%; 
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); 
+            transition: width 0.7s;
+        }
+        .tugas-btn:hover::before { width: 100%; }
+        
+        .tugas1 { 
+            background: linear-gradient(135deg, var(--lavender-sage) 0%, var(--sage-mint) 100%); 
+            color: var(--sage-core); 
+        }
+        .tugas1:hover { 
+            transform: translateY(-12px) scale(1.04); 
+            border-color: var(--dusty-pink); 
+            box-shadow: var(--shadow-sage);
+        }
+        
+        .tugas2 { 
+            background: linear-gradient(135deg, var(--dusty-pink) 0%, var(--blush-dust) 100%); 
+            color: var(--sage-core); 
+        }
+        .tugas2:hover { 
+            transform: translateY(-12px) scale(1.04); 
+            border-color: var(--sage-mint); 
+            box-shadow: 0 25px 55px rgba(244,194,194,0.35);
+        }
+        
+        .btn-icon { 
+            font-size: 2.1em; 
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
+        }
+        .btn-title { 
+            font-size: 1.25em; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+        .btn-subtitle { 
+            font-size: 0.92em; 
+            opacity: 0.92; 
+            font-weight: 300; 
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+        
+        footer { 
+            margin-top: 85px; 
+            color: var(--sage-core); 
+            font-size: 1em; 
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 520px) {
+            .container { padding: 60px 40px; margin: 20px; }
+            h1 { font-size: 2.2em; }
+            .floral-accent { font-size: 3em; }
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#index">Index</a>
-        <a href="#biodata">Biodata</a>
-        <a href="#galeri">Galeri Foto Kost</a>
-        <a href="#video">Video Suasana</a>
-    </nav>
-
-    <header>
-        <h1>SISTEM INFORMASI MANAJEMEN </h1>
-        <p>GINA ZAHIRA 2310715320001 </p>
-
-    </header>
-
-    <section id="index">
-        <h2>Daftar Halaman</h2>
-        <ul>
-            <li><a href="#biodata">1. Biodata </a></li>
-            <li><a href="#galeri">2. Galeri Foto Kost</a></li>
-            <li><a href="#video">3. Video Suasana Kost</a></li>
-        </ul>
-    </section>
-
-    <section id="biodata">
-        <h2>Biodata Diri</h2>
-        <div class="biodata-grid">
-            <div><strong>Nama:</strong> Gina Zahira </div>
-            <div><strong>Tempat, Tanggal Lahir:</strong> Kotabaru 28 Mei 2005 </div>
-            <div><strong>Asal:</strong> Kabupaten Kotabaru, Kalimantan Selatan </div>
-            <div><strong>Pendidikan:</strong> Saat ini saya merupakan mahasiswi program studi sosial ekonomi perikanan angkatan 2023, Fakultas Perikanan dan Ilmu Kelautan, Universitas Lambung Mangkurat</div>
-             <div><strong>Hobi:</strong> Saya mempunyai hobi mendengarkan berbagai jenis musik, nonton film, nonton drama korea ataupun drama lainnya, suka juga membacaa, dan karena saya suka mendengarkan musik jadinya suka nonton konser apapun itu drama musikal juga sukaaa </div>
+    <div class="container">
+        <div class="header">
+            <div class="floral-accent">🌸</div>
+            <h1>Gina Zahira</h1>
+            <p class="prodi">Sosial Ekonomi Perikanan • Universitas Lambung Mangkurat</p>
         </div>
-    </section>
-
-    <section id="galeri">
-        <h2>Galeri Foto Kost</h2>
-        <div class="galeri-grid">
-            <img src="FOTO 1.jpeg" width="500" alt="kost tampak depan">
-            <img src="FOTO 2.jpeg" width="500" alt="kost tampak belakang">
-            <img src="FOTO 3.jpeg" width="500" alt="kost tampak kiri">
-            <img src="FOTO 4.jpeg" width="500" alt="kost tampak kanan">
+        
+        <div class="daftar-buttons">
+            <a href="halaman1.html" class="tugas-btn tugas1" target="_blank">
+                <span class="btn-icon">📈</span>
+                <span class="btn-title">Tugas 1</span>
+                <span class="btn-subtitle">Biodata</span>
+            </a>
+            <a href="halaman2.html" class="tugas-btn tugas2" target="_blank">
+                <span class="btn-icon">🐠</span>
+                <span class="btn-title">Tugas 2</span>
+                <span class="btn-subtitle">Demografi Keuangan</span>
+            </a>
         </div>
-    </section>
-
-    <section id="video">
-        <h2>Video Suasana Kost</h2>
-        <p>: <video src="VIDEO.mp4" controls style="width:100%; max-width:600px; margin-top:20px;"></video></p>
-    </section>
-     <footer>
-        <p>&copy; 2026- Dibuat Untuk Tugas Sistem Informasi Manajamen.</p>
+    </div>
+    <a href="index.html" class="home-btn">🏠 Home</a>
+    <footer>
+        <p>🌿 Tugas Sistem-2026</p>
     </footer>
-
-    <script>
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-                let section = document.querySelector(anchor.getAttribute('href'));
-                if (section.getBoundingClientRect().top < 100) {
-                    anchor.style.background = '#44a08d';
-                } else {
-                    anchor.style.background = 'rgba(255,255,255,0.2)';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
