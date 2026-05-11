@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 4 - Gina Zahira</title>
+    <title>Daftar Tugas - Gina Zahira</title>
     <style>
         :root {
             --sage-mint: #b2d8b2;
@@ -75,4 +75,182 @@
             animation: petalFloat 4s ease-in-out infinite;
         }
         @keyframes petalFloat {
-           
+            0%, 100% { transform: rotate(-2deg) translateY(0px); }
+            50% { transform: rotate(2deg) translateY(-4px); }
+        }
+        h1 { 
+            color: var(--sage-core); 
+            font-size: 2.6em; 
+            font-weight: 400; 
+            letter-spacing: 3px; 
+            margin-bottom: 12px;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+        .prodi { 
+            color: var(--dusty-pink); 
+            font-weight: 600; 
+            font-size: 1.15em;
+            text-shadow: 0 1px 4px rgba(244,194,194,0.4);
+        }
+        
+        .daftar-buttons { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 35px;
+        }
+        .tugas-btn { 
+            position: relative; 
+            padding: 30px 45px; 
+            font-size: 1.45em; 
+            font-weight: 500; 
+            border: 2px solid rgba(255,255,255,0.6); 
+            border-radius: 30px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 12px; 
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            overflow: hidden;
+            font-family: inherit;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .tugas-btn::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 0; 
+            height: 100%; 
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); 
+            transition: width 0.7s;
+        }
+        .tugas-btn:hover::before { width: 100%; }
+        
+        .tugas1 { 
+            background: linear-gradient(135deg, var(--lavender-sage) 0%, var(--sage-mint) 100%); 
+            color: var(--sage-core); 
+        }
+        .tugas1:hover { 
+            transform: translateY(-12px) scale(1.04); 
+            border-color: var(--dusty-pink); 
+            box-shadow: var(--shadow-sage);
+        }
+        
+        .tugas2 { 
+            background: linear-gradient(135deg, var(--dusty-pink) 0%, var(--blush-dust) 100%); 
+            color: var(--sage-core); 
+        }
+        .tugas2:hover { 
+            transform: translateY(-12px) scale(1.04); 
+            border-color: var(--sage-mint); 
+            box-shadow: 0 25px 55px rgba(244,194,194,0.35);
+        }
+        
+        .tugas3 { 
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, #66b3ff 100%); 
+            color: white; 
+        }
+        .tugas3:hover { 
+            transform: translateY(-12px) scale(1.04); 
+            border-color: var(--sage-mint); 
+            box-shadow: var(--shadow-ocean);
+        }
+        
+        .btn-icon { 
+            font-size: 2.1em; 
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
+        }
+        .btn-title { 
+            font-size: 1.25em; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+        .btn-subtitle { 
+            font-size: 0.92em; 
+            opacity: 0.92; 
+            font-weight: 300; 
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+        
+        .home-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(139, 168, 139, 0.8);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(139,168,139,0.3);
+            transition: all 0.3s ease;
+            z-index: 10;
+            font-family: inherit;
+        }
+        .home-btn:hover {
+            transform: scale(1.1);
+            background: var(--sage-core);
+        }
+        
+        footer { 
+            margin-top: 85px; 
+            color: var(--sage-core); 
+            font-size: 1em; 
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 520px) {
+            .container { padding: 60px 40px; margin: 20px; }
+            h1 { font-size: 2.2em; }
+            .floral-accent { font-size: 3em; }
+            .home-btn { bottom: 20px; right: 20px; padding: 12px 16px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="floral-accent">🌸</div>
+            <h1>Gina Zahira</h1>
+            <p class="prodi">Sosial Ekonomi Perikanan • Universitas Lambung Mangkurat</p>
+        </div>
+        
+        <div class="daftar-buttons">
+            <a href="halaman1.html" class="tugas-btn tugas1" target="_blank">
+                <span class="btn-icon">📈</span>
+                <span class="btn-title">Tugas 1</span>
+                <span class="btn-subtitle">Biodata</span>
+            </a>
+            <a href="halaman2.html" class="tugas-btn tugas2" target="_blank">
+                <span class="btn-icon">🐠</span>
+                <span class="btn-title">Tugas 2</span>
+                <span class="btn-subtitle">Demografi Keuangan</span>
+            </a>
+            <a href="gform.html" class="tugas-btn tugas3" target="_blank">
+                <span class="btn-icon">📋</span>
+                <span class="btn-title">Tugas 3</span>
+                <span class="btn-subtitle">Google Form</span>
+            </a>
+<a href="https://forms.gle/iq8rT5UCABVkPRCo8" class="tugas-btn tugas4" target="_blank" rel="noopener noreferrer">
+    <span class="btn-icon">📋</span>
+    <span class="btn-title">Tugas 4</span>
+    <span class="btn-subtitle">Tingkat Kepuasan</span>
+</a>
+</body>
+</html>
+    <a href="index.html" class="home-btn">🏠 Home</a>
+    <footer>
+        <p>🌿 Tugas Sistem-2026</p>
+    </footer>
+</body>
+</html>                                                    
