@@ -324,40 +324,141 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <span class="floral-accent">✨</span>
-        <h1>Tugas 4</h1>
-        <p class="sub-title">Analisis Tingkat Kepuasan</p>
-    </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - Gina Zahira</title>
+    <style>
+        :root {
+            --sage-mint: #b2d8b2;
+            --dusty-pink: #f4c2c2;
+            --lavender-sage: #d7e1d6;
+            --sage-core: #8ba88b;
+            --blush-dust: #f5d5d5;
+            --ocean-blue: #4a90e2;
+            --shadow-sage: 0 20px 45px rgba(178,216,178,0.25);
+        }
 
-    <div class="daftar-buttons">
-        <a href="https://forms.gle/iq8rT5UCABVkPRCo8" class="tugas-btn btn-form" target="_blank">
-            <span class="icon">📋</span>
-            <span>Link Google Form</span>
-        </a>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        <a href="Hasil analisis Gina Zahira.xlsx" class="tugas-btn btn-file" download>
-            <span class="icon">📊</span>
-            <span>File Hasil Analisis</span>
-        </a>
+        body { 
+            font-family: 'Playfair Display', 'Georgia', serif; 
+            background: linear-gradient(135deg, var(--sage-mint) 0%, var(--dusty-pink) 45%, var(--lavender-sage) 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 25px;
+            position: relative;
+        }
 
-        <a href="index.html" class="tugas-btn btn-back">
-            <span class="icon">🏠</span>
-            <span>Kembali ke Beranda</span>
-        </a>
-    </div>
-</div>
+        /* Container Putih Transparan */
+        .container { 
+            background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(247,247,247,0.95));
+            backdrop-filter: blur(12px); 
+            padding: 50px 40px; 
+            border-radius: 40px; 
+            box-shadow: var(--shadow-sage); 
+            max-width: 500px; 
+            width: 100%;
+            border: 1px solid rgba(139,168,139,0.3);
+            text-align: center;
+        }
 
-<footer>
-    <p>🌿 Sistem Informasi 2026</p>
-</footer>
+        .header { margin-bottom: 40px; }
+        .floral-icon { font-size: 3.5em; margin-bottom: 10px; display: block; }
+        h1 { color: var(--sage-core); font-size: 2.4em; letter-spacing: 2px; margin-bottom: 5px; }
+        .sub-title { color: var(--dusty-pink); font-weight: 600; font-size: 1.1em; letter-spacing: 1px; }
 
-</body>
-</html>
-    <a href="index.html" class="home-btn">🏠 Home</a>
+        /* Pembungkus Tombol */
+        .button-stack { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 20px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Warna Tombol 1: Google Form */
+        .btn-google {
+            background: linear-gradient(135deg, #673ab7, #9575cd);
+            box-shadow: 0 10px 20px rgba(103, 58, 183, 0.2);
+        }
+
+        /* Warna Tombol 2: File Lampiran */
+        .btn-excel {
+            background: linear-gradient(135deg, #217346, #33a35c);
+            box-shadow: 0 10px 20px rgba(33, 115, 70, 0.2);
+        }
+
+        /* Warna Tombol 3: Home */
+        .btn-home {
+            background: linear-gradient(135deg, var(--sage-core), var(--sage-mint));
+            box-shadow: 0 10px 20px rgba(139, 168, 139, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+            border-color: white;
+        }
+
+        .btn-icon { font-size: 1.4em; }
+
+        footer {
+            margin-top: 40px;
+            color: var(--sage-core);
+            font-size: 0.9em;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <span class="floral-icon">🌸</span>
+            <h1>Tugas 4</h1>
+            <p class="sub-title">Tingkat Kepuasan Pelanggan</p>
+        </div>
+
+        <div class="button-stack">
+            <a href="https://forms.gle/iq8rT5UCABVkPRCo8" class="btn btn-google" target="_blank">
+                <span class="btn-icon">📋</span>
+                <span>Google Form</span>
+            </a>
+
+            <a href="Hasil analisis Gina Zahira.xlsx" class="btn btn-excel" download>
+                <span class="btn-icon">📊</span>
+                <span>Hasil Analisis</span>
+            </a>
+
+            <a href="index.html" class="btn btn-home">
+                <span class="btn-icon">🏠</span>
+                <span>Menu Utama</span>
+            </a>
+        </div>
+    
     <footer>
-        <p>🌿 Tugas Sistem-2026</p>
+        <p>🌿 Gina Zahira - Sistem 2026</p>
     </footer>
-</body>
 </html>                                                    
