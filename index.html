@@ -241,42 +241,118 @@
                 <span class="btn-title">Tugas 3</span>
                 <span class="btn-subtitle">Google Form</span>
             </a>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - Gina Zahira</title>
+    <style>
+        :root {
+            --sage-mint: #b2d8b2;
+            --dusty-pink: #f4c2c2;
+            --lavender-sage: #d7e1d6;
+            --sage-core: #8ba88b;
+            --blush-dust: #f5d5d5;
+            --ocean-blue: #4a90e2;
+            --shadow-sage: 0 20px 45px rgba(178,216,178,0.25);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Playfair Display', 'Georgia', serif; 
+            background: linear-gradient(135deg, var(--sage-mint) 0%, var(--dusty-pink) 45%, var(--lavender-sage) 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 25px;
+        }
+        .container { 
+            background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(247,247,247,0.95));
+            backdrop-filter: blur(12px); 
+            padding: 60px 45px; 
+            border-radius: 40px; 
+            box-shadow: var(--shadow-sage); 
+            max-width: 580px; 
+            width: 100%;
+            border: 1px solid rgba(139,168,139,0.3);
+            text-align: center;
+        }
+        .header { margin-bottom: 45px; }
+        .floral-accent { font-size: 3em; margin-bottom: 15px; display: block; }
+        h1 { color: var(--sage-core); font-size: 2.2em; letter-spacing: 2px; margin-bottom: 10px; }
+        .sub-title { color: var(--dusty-pink); font-weight: 600; font-style: italic; }
+        
+        .daftar-buttons { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
+        
+        .tugas-btn { 
+            text-decoration: none;
+            padding: 22px 30px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 600;
+            font-size: 1.1em;
+            border: 2px solid rgba(255,255,255,0.6);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Button 1: Google Form (Warna Ocean Blue) */
+        .btn-form { background: linear-gradient(135deg, var(--ocean-blue), #66b3ff); }
+        
+        /* Button 2: File Excel (Warna Sage) */
+        .btn-file { background: linear-gradient(135deg, var(--sage-core), var(--sage-mint)); }
+        
+        /* Button 3: Kembali (Warna Pink Soft) */
+        .btn-back { background: linear-gradient(135deg, var(--dusty-pink), var(--blush-dust)); color: var(--sage-core); }
+
+        .tugas-btn:hover { 
+            transform: translateY(-8px) scale(1.02); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: white;
+        }
+        
+        .icon { font-size: 1.6em; }
+
+        footer { margin-top: 50px; color: var(--sage-core); font-style: italic; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
 <div class="container">
     <div class="header">
         <span class="floral-accent">✨</span>
         <h1>Tugas 4</h1>
         <p class="sub-title">Analisis Tingkat Kepuasan</p>
     </div>
+
     <div class="daftar-buttons">
         <a href="https://forms.gle/iq8rT5UCABVkPRCo8" class="tugas-btn btn-form" target="_blank">
             <span class="icon">📋</span>
-            <span> Google Form</span>
+            <span>Link Google Form</span>
         </a>
 
         <a href="Hasil analisis Gina Zahira.xlsx" class="tugas-btn btn-file" download>
             <span class="icon">📊</span>
             <span>File Hasil Analisis</span>
         </a>
+
         <a href="index.html" class="tugas-btn btn-back">
             <span class="icon">🏠</span>
             <span>Kembali ke Beranda</span>
         </a>
+    </div>
 </div>
 
 <footer>
     <p>🌿 Sistem Informasi 2026</p>
 </footer>
 
-</body>
-</html>
-        </a>
-
-        <a href="index.html" class="tugas-btn btn-back">
-            <span class="icon">🏠</span>
-            <span>Kembali ke Menu Utama</span>
-        </a>
-    </div>
-</div>
 </body>
 </html>
     <a href="index.html" class="home-btn">🏠 Home</a>
