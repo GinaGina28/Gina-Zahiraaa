@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rencana Kegiatan Kelompok | POKLAHSAR</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --primary: #0b5ed7;
+  --primary-dark: #084298;
+  --green: #28a745;
+  --green-dark: #218838;
+  --orange: #ffa000;
+  --orange-dark: #c77d00;
+  --excel: #1d6f42;
+  --excel-dark: #145a32;
+  --bg: #eef3fa;
+  --card: #ffffff;
+  --text: #333;
+  --muted: #666;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --shadow-hover: 0 14px 35px rgba(0,0,0,0.12);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background: var(--primary);
+  color: #fff;
+  position: fixed;
+  overflow-y: auto;
+}
+
+.logo {
+  padding: 25px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.logo h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.logo p {
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+.menu {
+  padding: 15px;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  margin-bottom: 6px;
+}
+
+.menu a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgba(255,255,255,0.15);
+}
+
+.submenu {
+  display: none;
+  margin-left: 18px;
+  margin-top: 6px;
+}
+
+.submenu a {
+  font-size: 14px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.rotate {
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+
+.main {
+  margin-left: 280px;
+  width: calc(100% - 280px);
+}
+
+.topbar {
+  background: #fff;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.topbar h2 {
+  color: var(--primary);
+}
+
+.content {
+  padding: 25px;
+  max-width: 1300px;
+}
+
+.page-header {
+  margin-bottom: 22px;
+}
+
+.page-header h2 {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plan-table th,
+.plan-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e6e6e6;
+  vertical-align: top;
+}
+
+.plan-table th {
+  background: #f0f4ff;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.plan-table tr:hover {
+  background: #f9fbff;
+}
+
+.form-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-card {
+  background: #f8faff;
+  border: 2px solid #e0e8ff;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.form-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(11,93,215,0.12);
+}
+
+.form-card h4 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.form-card p {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin: 6px 4px 0;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-form {
+  background: var(--primary);
+}
+
+.btn-form:hover {
+  background: var(--primary-dark);
+}
+
+.btn-sheet {
+  background: var(--green);
+}
+
+.btn-sheet:hover {
+  background: var(--green-dark);
+}
+
+.btn-looker {
+  background: var(--orange);
+}
+
+.btn-looker:hover {
+  background: var(--orange-dark);
+}
+
+.btn-excel {
+  background: var(--excel);
+}
+
+.btn-excel:hover {
+  background: var(--excel-dark);
+}
+
+.looker-section iframe {
+  width: 100%;
+  height: 620px;
+  border: none;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  body {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .form-links {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .looker-section iframe {
+    height: 420px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+    <h2>POKLAHSAR</h2>
+    <p>Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
+  </div>
+
+  <div class="menu">
+    <ul>
+      <li><a href="index.html"><span><i class="fas fa-home"></i> Menu</span></a></li>
+      <li><a href="kelompok.html"><span><i class="fas fa-users"></i> Kelompok</span></a></li>
+      <li>
+        <a href="#" onclick="toggleBuku(); return false;">
+          <span><i class="fas fa-book"></i> Buku</span>
+          <i id="arrowBuku" class="fas fa-chevron-right"></i>
+        </a>
+        <div class="submenu" id="submenuBuku">
+          <a href="dataanggota.html">Data Anggota</a>
+          <a href="tamukelompok.html">Tamu Kelompok</a>
+          <a href="kaskelompok.html">Kas Kelompok</a>
+          <a href="produksikelompok.html">Produksi Kelompok</a>
+          <a href="notulenrapat.html">Notulen Rapat</a>
+          <a href="ruk.html">RUK</a>
+          <a href="rub.html">RUB</a>
+          <a href="agenda.html">Agenda</a>
+        </div>
+      </li>
+      <li><a href="rencanakegiatan.html" class="active"><span><i class="fas fa-calendar-check"></i> Rencana Kegiatan</span></a></li>
+      <li><a href="polapoklahsar.html"><span><i class="fas fa-store"></i> Pola Pengolahan</span></a></li>
+      <li><a href="inventarisbarang.html"><span><i class="fas fa-boxes"></i> Inventaris Barang</span></a></li>
+      <li><a href="pertemuankelompok.html"><span><i class="fas fa-users"></i> Pertemuan Kelompok</span></a></li>
+      <li><a href="iurankelompok.html"><span><i class="fas fa-wallet"></i> Iuran Kelompok</span></a></li>
+      <li><a href="pinjamananggota.html"><span><i class="fas fa-money-bill-wave"></i> Pinjaman Anggota</span></a></li>
+      <li><a href="kodifikasi.html"><span><i class="fas fa-qrcode"></i> Kodifikasi Kelompok</span></a></li>
+      <li><a href="printdokumen.html"><span><i class="fas fa-print"></i> Print Dokumen</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h2>Rencana Kegiatan</h2>
+    <div>POKLAHSAR</div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <h2>Rencana Kegiatan POKLAHSAR</h2>
+      <p>Halaman ini berisi tautan form pendaftaran kegiatan, hasil spreadsheet, form kepuasan, hasil spreadsheet kepuasan, dashboard Looker Studio, dan file Excel hasil analisis.</p>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-calendar-check"></i> Daftar Rencana Kegiatan</h3>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Kegiatan</th>
+            <th>Keterangan</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Pendaftaran Rencana Kegiatan POKLAHSAR</td>
+            <td>Form untuk mengisi rencana kegiatan kelompok.</td>
+            <td><span style="color: green; font-weight: bold;">Buka</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-link"></i> Tautan Form dan Spreadsheet</h3>
+      <div class="form-links">
+        <div class="form-card">
+          <h4><i class="fas fa-user-plus"></i> Form Pendaftaran Rencana Kegiatan</h4>
+          <p>Gunakan form ini untuk mendaftarkan rencana kegiatan kelompok.</p>
+          <a href="https://forms.gle/aMeNt4ge2o76R1s98" class="btn btn-form" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Buka Form
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/1GwV1eMIoK7vd0q9vYm0Z2q-fWoIXISoNks32x9sqDRU/edit?usp=sharing" class="btn btn-sheet" target="_blank">
+            <i class="fas fa-table"></i> Hasil Spreadsheet
+          </a>
+        </div>
+
+        <div class="form-card">
+          <h4><i class="fas fa-smile"></i> Form Tingkat Kepuasan</h4>
+          <p>Gunakan form ini untuk mengisi tingkat kepuasan terhadap kegiatan POKLAHSAR.</p>
+          <a href="https://forms.gle/Fef7oaTm2F39eftr5" class="btn btn-form" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Buka Form
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/1isqR2cLStO-6Rep794crXIAhQmeVlON4cRrePxFwSro/edit?usp=sharing" class="btn btn-sheet" target="_blank">
+            <i class="fas fa-table"></i> Hasil Spreadsheet
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card looker-section">
+      <h3><i class="fas fa-chart-bar"></i> Dashboard Looker Studio</h3>
+      <p class="note">Dashboard ini menampilkan analisis hasil pendaftaran dan tingkat kepuasan anggota POKLAHSAR.</p>
+      <iframe src="https://datastudio.google.com/embed/reporting/b410628c-6e2e-452b-a8af-a4fb51fccdac/page/page_12345" allowfullscreen></iframe>
+      <div style="margin-top: 14px;">
+        <a href="https://datastudio.google.com/embed/reporting/a0c54ed8-97c7-4740-b147-fa0c4352aa61/page/page_12345" class="btn btn-looker" target="_blank">
+          <i class="fas fa-external-link-alt"></i> Buka Looker Studio
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-file-excel"></i> Hasil Analisis Excel</h3>
+      <p class="note">Unduh file Excel hasil analisis lengkap dari data pendaftaran dan tingkat kepuasan.</p>
+      <a href="Hasil analisis Tugas Akhir Gina Zahira.xlsx" class="btn btn-excel" target="_blank">
+        <i class="fas fa-download"></i> Download File Excel
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleBuku() {
+  const submenu = document.getElementById("submenuBuku");
+  const arrow = document.getElementById("arrowBuku");
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.classList.remove("rotate");
+  } else {
+    submenu.style.display = "block";
+    arrow.classList.add("rotate");
+  }
+}
+</script>
+
+</body>
+</html>
