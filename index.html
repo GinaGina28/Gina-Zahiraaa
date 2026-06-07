@@ -15,6 +15,7 @@
 --purple-form: #673ab7;
 --green-excel: #217346;
 --orange-plan: #ffa000;
+--final-project: #14b8a6; /* Warna baru untuk Tugas Akhir */
 --shadow-sage: 0 20px 45px rgba(178,216,178,0.25);
 --shadow-ocean: 0 20px 45px rgba(74,144,226,0.3);
 }
@@ -189,6 +190,16 @@ border-color: var(--sage-mint);
 box-shadow: 0 25px 55px rgba(255,160,0,0.25);
 }
 
+/* Style Baru Tugas Akhir */
+.tugas-akhir {
+background: linear-gradient(135deg, var(--final-project) 0%, #0d9488 100%);
+color: white;
+}
+.tugas-akhir:hover {
+border-color: var(--dusty-pink);
+box-shadow: 0 25px 55px rgba(20,184,166,0.3);
+}
+
 .btn-icon {
 font-size: 1.8em;
 filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
@@ -292,10 +303,19 @@ h1 { font-size: 2.2em; }
 
     <div class="section-title">Tugas 5: Rencana Kegiatan</div>
 
-    <a href="https://kelompokpoklahsar.github.io/Kelompok-3-Poklahsar/" class="tugas-btn tugas5" target="_blank">
+    <a href="rencanakegiatan.html" class="tugas-btn tugas5" target="_blank">
       <span class="btn-icon">🗓️</span>
       <span class="btn-title">Tugas 5</span>
       <span class="btn-subtitle">Rencana Kegiatan POKLAHSAR</span>
+    </a>
+
+    <!-- Bagian Tugas Akhir yang Baru Ditambahkan -->
+    <div class="section-title">Tugas Akhir: Website Kelompok</div>
+
+    <a href="https://kelompokpoklahsar.github.io/Kelompok-3-Poklahsar/" class="tugas-btn tugas-akhir" target="_blank">
+      <span class="btn-icon">🌐</span>
+      <span class="btn-title">Tugas Akhir</span>
+      <span class="btn-subtitle">Website Profil Poklahsar Kelompok 3</span>
     </a>
   </div>
 </div>
